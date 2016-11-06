@@ -1,0 +1,90 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                	<h3 class="box-title">Новости</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+					<div align="right">					
+							<a class="btn btn-success" ui-sref="post-edit">Добавить пост</a>				
+					 </div>
+					<br>
+					<div id="example11_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	                  		<div class="row">
+	                  			
+	                  			
+		                  		<div class="col-sm-6">
+			                  		<div id="example11_filter" class="dataTables_filter">
+			                  			<label>Поиск по названию:
+			                  				<input type="search" class="form-control input-sm" ng-model="search" ng-change="searchPosts(search)" placeholder="Введите название" aria-controls="example11">
+			                  			</label>
+			                  		</div>
+		                  		</div>
+	                  		</div>
+	                  		<div class="row">
+	                  			<div class="col-sm-12">
+	                  				<table id="example11" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="example11_info">
+	                    				<thead>
+	                      					<tr role="row">
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Название: активировать для сортировки столбца по возрастанию" style="width: 218.889px;">
+	                      							<center>Название</center>
+	                      						</th>
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Дата создания: активировать для сортировки столбца по возрастанию" style="width: 118.889px;">
+	                      							<center>Дата создания</center>
+	                      						</th>
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Дата создания: активировать для сортировки столбца по возрастанию" style="width: 118.889px;">
+	                      							<center>Последнее изменение</center>
+	                      						</th>	     
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Дата создания: активировать для сортировки столбца по возрастанию" style="width: 118.889px;">
+	                      							<center>Автор</center>
+	                      						</th>                 						
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Статус: активировать для сортировки столбца по возрастанию" style="width: 174.889px;">
+	                      							<center>Статус</center>
+	                      						</th>
+	                      						<th style="width: 186px;" class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Действие: активировать для сортировки столбца по возрастанию">
+	                      							<center>Действие</center>
+	                      						</th>
+	                      					</tr>
+	                    				</thead>
+	                    				<tbody>
+	                    					<tr role="row" class="odd" ng-repeat="post in posts">
+	                        					<td>
+	                        						<center ng-bind="post.title"></center>
+	                        					</td>
+	                        					<td>
+	                        						<center ng-bind="post.created_at"></center>
+	                        					</td>
+	                        					<td>
+	                        						<center ng-bind="post.last_mod"></center>
+	                        					</td>
+	                        					<td>
+	                        						<center ng-bind="post.author"></center>
+	                        					</td>
+	                        					<td>
+	                        						<center ng-bind="post.status"></center>
+	                        					</td>
+	                        					<td style="width: 10%;">
+	                        						<center>	                        							
+															<!-- <button style="width:100%;margin-top:2px;" class="btn btn-primary">В эфир</button>	 -->
+															<a style="width:100%;margin-top:2px;" class="btn btn-primary" ui-sref="post-edit({'post': post._id})">Редактировать</a>
+															<a style="width:100%;margin-top:2px;" class="btn btn-danger" ui-sref="post-delete({'post': post._id})">Удалить</a>
+													
+										     		</center>
+										     	</td>
+	                      					</tr>
+	                      				</tbody>
+	                  				</table>
+	                  			</div>
+	                  		</div>
+	                  		<div class="row">
+	                  			<center><button ng-click="loadPosts(search)" class="btn">Показать еще...</button></center>
+	                  		</div>
+                  	</div>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

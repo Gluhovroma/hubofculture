@@ -1,0 +1,46 @@
+<div  id="{{simple.urlname}}" class="post-container" ng-class="class" >
+  <div class="card half_card mix_card mix waypoint start ">
+    <div class="reason">      
+      <p class="byline">     
+        <span class="date">
+          <abbr title="{{simple.date}}" ng-bind="simple.date"></abbr>
+        </span>
+        <i class="glyphicon glyphicon-pencil" class="avatar" style="font-size: 15px; opacity: 0.8; margin:0px 3px 0px 3px">       
+        </i>
+        <strong style="color:black; opacity:0.6" ng-bind="simple.author"></strong>
+      </p>
+    </div>
+    <div ng-class="{'col-md-6': colmd6}" style="padding:0;">
+        <div class="cover">
+        <a ui-sref="articles.article({'name': simple.urlname})">
+        <div afkl-lazy-image="{{simple.photo}}" 
+    class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname" afkl-lazy-image-options="{{nolazy}}"></div>         
+        </a>            
+                     
+            <div class="quick_actions" ng-show="simple.song_cond">
+                <a class="quick_play" href="" title="play" style="border: none;color: #999;"  ng-click="play(simple)">
+                  <span class="ion-android-arrow-dropright-circle" style"color: #999;"></span>                
+                </a>              
+                <span class="pipe"></span>
+            </div>        
+         </div>
+    </div>    
+    <div ng-class="{'col-md-6': colmd6}" style="padding:0px 15px 0px 15px">
+      <h3 class="title black" style="color: #333;font-size: 20px;">
+      <a ui-sref="articles.article({'name': simple.urlname})" class="title black" ng-bind="simple.title" style="color: #333;font-size: 20px;"></a>
+    </h3>  
+    <div class="frontside">
+      <div class="grid_tags tags">
+        <a ui-sref="articles({'tag': tag.urlname})" class="tag" title="Yeah Yeah Yeahs  " ng-repeat="tag in simple.tags  | limitTo:7">       
+            <span  ng-bind="'#'+tag.name"></span>
+          </a>
+      </div>
+    </div>
+    <div class="annotation" style="" ng-bind-html="simple.content  | truncate:150"></div> 
+    <div style="margin-top:10px">
+        <a ui-sref="articles.article({'name': simple.urlname})" style="font-size: 12px;">Читать далее...</a>
+    </div>
+    </div>
+        
+  </div>
+</div>

@@ -1,0 +1,10 @@
+/* font-family: "DroidSerifItalic"; */
+@font-face {
+    font-family: "DroidSerifItalic";
+    src: url("../fonts/DroidSerifItalic/DroidSerifItalic.eot");
+    src: url("../fonts/DroidSerifItalic/DroidSerifItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/DroidSerifItalic/DroidSerifItalic.woff") format("woff"),
+    url("../fonts/DroidSerifItalic/DroidSerifItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

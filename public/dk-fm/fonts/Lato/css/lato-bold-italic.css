@@ -1,0 +1,10 @@
+/* font-family: "LatoBoldItalic"; */
+@font-face {
+    font-family: "LatoBoldItalic";
+    src: url("../fonts/LatoBoldItalic/LatoBoldItalic.eot");
+    src: url("../fonts/LatoBoldItalic/LatoBoldItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LatoBoldItalic/LatoBoldItalic.woff") format("woff"),
+    url("../fonts/LatoBoldItalic/LatoBoldItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

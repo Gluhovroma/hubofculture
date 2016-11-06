@@ -1,0 +1,56 @@
+
+
+
+<div class="container-lv2">
+    <div style="   margin-bottom: 5px;
+    text-align: center;
+    font-size: 13px;
+    font-family: GothamProLight;
+    /* margin-left: -20%; */
+    width: 86%;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    line-height:0;
+    height: 36px;
+    /* padding: 2px; */
+    margin-left: 29px;cursor:pointer" ng-click="goMain()">
+    	<i class="ion-reply"  style="font-size: 20px;
+    line-height: 0;
+    display: inline-block;
+    float: left;
+    margin-left: 10px;"></i>
+		<span ng-bind="wherePodcasts" style="font-size: 20px;
+    /* line-height: 0; */
+    display: inline-block;
+    float: left;
+    margin-left: 18px;"></span>
+    </div>
+<div style="margin: 0px 23px 0px 28px;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;">
+	<div class="pdcast-lv2-row" ng-repeat="(key, podcast) in podcasts" ng-click="goPodcastSongs(podcast)" style="cursor:pointer">		
+		
+		<div class="pdcast-lv2-name pdcast-lv2-item" >
+			<div class="table-wrap">
+				<div style="text-align:center; width:100%;" class="cell-wrap">
+					
+						<div class="pdcast-lv2-song" ng-bind="podcast.data.name"></div>
+						<div class="pd-by">by</div>
+						<div class="pdcast-lv2-author" ng-bind="podcast.data.author"></div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="pdcast-lv2-date pdcast-lv2-item"  >
+			<div class="table-wrap">
+				<div style="text-align:right;" class="cell-wrap">
+					<div class="pdcast-lv2-cr">created at</div>
+					<div class="pdcast-lv2-cr" ng-bind="podcast.data.date"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>

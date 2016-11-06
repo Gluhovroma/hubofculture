@@ -1,0 +1,78 @@
+<style type="text/css">
+	.ta-scroll-window {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+	button[name="html"] {
+		display: none !important;
+	}
+	button[name="insertImage"] {
+		display: none !important;
+	}
+	button[name="insertLink"] {
+		display: none !important;
+	}
+	button[name="insertVideo"] {
+		display: none !important;
+	}
+</style>
+
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak" ng-submit="save(date, timetable_items)">
+        				<div class="row">
+        				<div class="col-md-12">
+				            <div class="col-md-3">
+				                <fieldset>
+				                    <legend>Рассписание</legend>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Дата</label>
+				                        <div class="controls">
+				                        	<input type="date" data-ng-model="date" required class="span10" style="width: 230px;">                				                     
+				                        </div>
+				                    </div>                    			                    
+				                    				                    				                    			                    	                   
+				                </fieldset>
+				            </div>
+				            <div class="col-md-9">
+				            	<a class="btn btn-link" ng-click="AddNewTimetableItem()">
+						    		<i class="icon-plus-sign">						    			
+						    		</i> 
+						    		Добавить новое событие
+						    	</a>
+						    	<div class="" ng-repeat="timeteable_item in timetable_items" style="margin: 5px 0px 5px 0px;">
+						    		<div class="col-md-1">
+						    			<a class="btn btn-link" ng-click="deleteItem($index)">
+								    		Удалить	    	
+								    	</a>
+						    		</div>
+								    <div class="col-md-11">
+								    <input type="time" ng-model="timeteable_item.time" required class="form-control myInput" id="className">
+							        <input type="text" ng-model="timeteable_item.title" required class="form-control myInput" id="className">
+								    </div>
+							        					        
+								</div>				                
+				            </div>
+				          </div> 
+				        </div>
+				        <div class="row-fluid">
+				            <div class="control-group">
+				                <div class="controls row-fluid">
+				                    <div class="span12" style="margin: 20px 0px 0px 15px;">
+				                        <input type="Submit" class="btn" value="Сохранить" />
+				                        <a class="btn" ui-sref="timetable"><i class="icon-remove-sign"></i>Вернуться к списку</a>
+				                    </div>
+				                </div>				                
+				            </div>
+				        </div>
+				       </form>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

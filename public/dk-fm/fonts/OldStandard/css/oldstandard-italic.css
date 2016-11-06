@@ -1,0 +1,10 @@
+/* font-family: "OldStandardItalic"; */
+@font-face {
+    font-family: "OldStandardItalic";
+    src: url("../fonts/OldStandardItalic/OldStandardItalic.eot");
+    src: url("../fonts/OldStandardItalic/OldStandardItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardItalic/OldStandardItalic.woff") format("woff"),
+    url("../fonts/OldStandardItalic/OldStandardItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

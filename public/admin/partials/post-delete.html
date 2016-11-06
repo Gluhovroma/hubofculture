@@ -1,0 +1,114 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak" >
+        				<div class="row">
+        				<div class="col-md-12">
+				            <div class="col-md-3">
+				                <fieldset>
+				                    <legend>Пост</legend>
+				                      <div class="control-group">
+				                        <label class="control-label" for="title">Статус</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<input type="text" ng-model="post.status.name " readonly/>                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+
+
+				                     <div class="control-group">
+				                        <label class="control-label" for="title">Структура</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<input type="text" ng-model="post.type.name " readonly/>                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Теги</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<ui-select multiple ng-model="post.tags" theme="select2" ng-disabled="disabled" style="width: 230px;">
+    												<ui-select-match placeholder="Выбери теги...">{{'#'+ $item.name}}</ui-select-match>
+    													<ui-select-choices repeat="tag in tags | propsFilter: {name: $select.search}">
+      														<div ng-bind-html="tag.name | highlight: $select.search"></div>      
+    													</ui-select-choices>
+  												</ui-select>					                            		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Название</label>
+				                        <div class="controls">
+				                            <input type="text" name="title" data-ng-model="post.title" class="span10" style="width: 230px;" readonly />  
+				                        </div>
+				                        <div class="control-group" ng-show="title_error">
+				                        
+				                    	</div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="firstName">Аннотация</label>
+				                        <div class="controls">
+				                            <textarea data-ng-model="post.annotation" class="span10" style="width: 230px;height:200px" readonly> </textarea>           
+				                        </div>
+				                    </div>				                    
+				                    
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Автор</label>
+				                        <div class="controls">
+				                            <input type="text" name="suffix" data-ng-model="post.author" class="span10" style="width: 230px;" readonly />				                           
+				                        </div>
+				                    </div>
+				                    <div class="control-group" ng-show="small_photo_path">
+				                        <label class="control-label" for="suffix">Лого</label>
+				                        <div class="controls">
+				                        	{{post.small_photo_path}}					        				                            
+				                        </div>
+				                       
+				                    </div>
+				                    
+				                    
+				                    <div class="control-group" ng-show="song_path">
+				                        <label class="control-label" for="suffix">Саунд</label>
+				                        <div class="controls">
+				                        	{{post.song_path}}									        			                            
+				                        </div>
+				                         
+				                    </div>	
+				                    				                    			                    	                   
+				                </fieldset>
+				            </div>
+				            <div class="col-md-9">
+				                <fieldset>			     
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Содержание</label>
+				                        <div text-angular ng-model="post.content" ta-bind  name="demo-editor" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
+				                    </div>				                    
+				                    			                   
+				                </fieldset>
+				            </div>
+				          </div> 
+				        </div>
+				        <div class="row-fluid">
+				            <div class="control-group">
+				                <div class="controls row-fluid">
+				                    <div class="span12" style="margin: 20px 0px 0px 15px;">
+				                        <button class="btn" data-ng-click="delete()">
+				                        	<i class="icon-remove-sign"></i>Удалить
+				                        </button> 
+				                        <a class="btn" ui-sref="posts"><i class="icon-remove-sign"></i>Вернуться к списку</a>
+				                    </div>
+				                </div>				                
+				            </div>
+				        </div>
+				       </form>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

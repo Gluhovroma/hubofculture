@@ -1,0 +1,56 @@
+/* font-family: "HarrietTextRegular"; */
+@font-face {
+    font-family: "HarrietTextRegular";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextRegular.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextRegularItalic"; */
+@font-face {
+    font-family: "HarrietTextRegularItalic";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextRegularItalic.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextMedium"; */
+@font-face {
+    font-family: "HarrietTextMedium";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextMedium.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextMediumItalic"; */
+@font-face {
+    font-family: "HarrietTextMediumItalic";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextMediumItalic.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextLight"; */
+@font-face {
+    font-family: "HarrietTextLight";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextLight.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextLightItalic"; */
+@font-face {
+    font-family: "HarrietTextLightItalic";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextLightItalic.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextBold"; */
+@font-face {
+    font-family: "HarrietTextBold";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextBold.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "HarrietTextBoldItalic"; */
+@font-face {
+    font-family: "HarrietTextBoldItalic";
+    src: url("../fonts/HarrietTextFontFamily/HarrietTextBoldItalic.otf") format("opentype");;
+    font-style: normal;
+    font-weight: normal;
+}

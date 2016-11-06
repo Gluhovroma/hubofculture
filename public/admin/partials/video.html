@@ -1,0 +1,92 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak"  ng-submit="addVideo(newvideo)">
+        				<div class="row">
+        				<div class="col-md-12">        				
+				            <div class="col-md-3">
+				                <fieldset>                			  	 
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Сcылка</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<input type="text" size="40" ng-change="show()" required  placeholder="Ccылка" ng-model="newvideo.url" style="margin: 10px 40px 0px 0px;">		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                      
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Теги</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  														<ui-select multiple ng-model="newvideo.tags" theme="select2" ng-disabled="disabled" style="width: 230px;">
+    												<ui-select-match placeholder="Выбери теги...">{{'#'+ $item.name}}</ui-select-match>
+    													<ui-select-choices repeat="tag in tags | propsFilter: {name: $select.search}">
+      														<div ng-bind-html="tag.name | highlight: $select.search"></div>      
+    													</ui-select-choices>
+  							</ui-select>
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <div class="controls">
+				                            <div class="controls" style="margin-top:10px">	
+  													<input type="Submit" class="btn btn-success" value="Добавить" />		
+  												    <a ui-sref="instagram" class="btn ">Назад</a>                   		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+                			  </fieldset>
+				            </div>
+				            <div class="col-md-7">
+				            	 <anguvideo ng-model="videoShow" width="100%" height="250" ></anguvideo>
+				            	
+				            </div>
+				            
+				        				          </div> 
+				        </div>				        
+				       </form>
+<table id="example11" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="example11_info">
+	                    				<thead>
+	                      					<tr role="row">	                      					
+	                      						
+	                      						<th style="width: 186px;" class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Действие: активировать для сортировки столбца по возрастанию">
+	                      							<center>Видео</center>
+	                      						</th>
+	                      						<th style="width: 186px;" class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Действие: активировать для сортировки столбца по возрастанию">
+	                      							<center>Действие</center>
+	                      						</th>
+	                      					</tr>
+	                    				</thead>
+	                    				<tbody>
+	                    					<tr role="row" class="odd" ng-repeat="video in videos">	                       					
+	                        					<td>
+	                        						<center>
+	                        							 <anguvideo ng-model="video.url" width="100%" height="300" ></anguvideo>
+	                        						</center>
+	                        					</td>
+	                        					<td style="width: 10%;">
+	                        						<center>									
+															<button style="width:100%;margin-top:2px;" class="btn btn-danger" ng-click="deleteVideo(video)">Удалить</button>				
+										     		</center>
+										     	</td>
+	                      					</tr>
+	                      				</tbody>
+	                  				</table>
+<div class="row">
+	                  			<center><button ng-click="loadVideo()" class="btn">Показать еще...</button></center>
+	                  		</div>
+
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+
+
+    </div><!-- /.row (main row) -->
+</section>

@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html ng-app="dk-fm">    
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title ng-bind="title"></title>
+    <meta name="description" content="">
+    <base href="/">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=0.5, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="/dk-fm/css/bootstrap.min.css">            
+    <link rel="stylesheet" href="/dk-fm/css/main.css">   
+  </head>
+  <body  style="background: whitesmoke !important;width: 100%;" ng-controller="mainController">
+    <main class="" id="main"  style="width:100%;">
+      <div class="row"  style="margin:0">          
+        <section id="radio" ng-swipe-left="closeRadio()" class="sidebar col-xs-alt-offset-12 col-xs-12 col-md-3 col-sm-5 animated fadeIn primary-info  slide-item left" ng-cloak>       
+            <div class="col-md-12 site-info" style="position: relative;padding: 10px 0px 0px 0px;margin-left:0px;height: 100%; " ng-cloak> 
+              <div id="main-hook-menu" class="hook-item radio-hook-item" style="position: absolute;
+    font-size: 30px;
+    z-index: 10;
+    top: 3px;
+    left: 4px;
+    float: left;
+    color: black;
+    margin-top: 0px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    padding-top: 3px;" ng-click="showRadio()">           
+                    <i class="ion-close-round" style="font-size: 35px;
+    cursor: pointer;
+    
+    padding: 5px;
+    color: #f7f7f7;" ></i>     
+                </div>     
+      		    <div class="primary-info animated fadeIn "> 
+                               
+                <div id="main-player" class="player" align="center" ng-click="radioPlay()" style="cursor:pointer">					
+							    <div id="player-wheels">
+								    <div align="center" class="casette-wheel" ng-cloak>
+								      <img src="/dk-fm/images/cs_wheel.png" class="" style="margin-left: 17%;" ng-class="{animation: animationCond}">
+								    </div>                                    
+								    <div align="center" class="casette-wheel" ng-cloak>
+								      <img src="/dk-fm/images/cs_wheel.png" class="" style="margin-left: -14%; " ng-class="{animation: animationCond}">
+								    </div>                                 
+							    </div> 
+							    <img id="casette-image" class="content-image-width" src="/dk-fm/images/cassette.png">							  
+							    <div class="player-container" style="">
+								    <div class="center-alingment col-xs-2 col-sm-2 col-md-2 col-lg-2">
+									    <div class="table-wrap">
+										    <div class="data-wrap">											    
+										    </div>
+									    </div>
+								    </div>
+								    <div class="center-alingment col-xs-8 col-sm-8 col-md-8 col-lg-8">
+									    <div class="table-wrap">										    
+									    </div>
+								    </div>
+  								 							
+  							  </div>                            
+						    </div>
+            </div>
+            <div class="player-controls" style="margin-top: 2px;">  
+              <div id="audio-player" class="audio-player-wrapper" style="">
+            <div class="audio-player-image" style="">
+              <div class="song-name-container">
+                <span class="audio-player-song-name" style="display:none"></span>
+                 <span class="audio-player-song-name2" ng-bind="song"></span>                 
+              </div>                           
+            </div>
+            <div class="audio-player-controls" style="text-align:center;margin-top: -5px;" ng-cloak>
+              <div role="button" class="audio-player-button-waves " ng-class="{'ion-radio-waves-play':radioPlayCond}" ng-click="radioPlay()" style="margin-left: 4%;
+    display: inline-block;
+    float: left;
+    font-size: 12px;
+    text-align: center;margin-top: 7px;width: 0px;"><div style="display:inline-block;line-height: 15px;font-family: GothamProLight;" align="center">
+    <div>
+    	ON <br>AIR
+    </div></div></div>
+              <span class="audio-player-button-wrappers" style="display: inline-block;margin: 0px 0px 0px 0px;" ng-cloak> 
+
+                <a role="button" class="audio-player-button  ion-ios-rewind" style="margin: 0;"></a>
+                <!-- <i role="button" class="audio-player-button ion-ios-rewind" ng-click="playerPrev()" style="margin: 0;"></i> -->
+                <i role="button" class="audio-player-button audio-player-place-pause-button ion-ios-play" ng-click="radioPlayPause()" style="margin: 0px 0px 0px 18px;" ng-cloak></i>
+                <a role="button" class="audio-player-button ion-ios-fastforward" style="margin: 0;"></a>
+                <!-- <i role="button" class="audio-player-button  ion-ios-fastforward" ng-click="playerNext()" style="margin: 0;"></i> -->
+
+              </span>
+              <div style="font-size: 21px;margin-right: 4%;
+    display: inline-block;height: 25px;
+    float: right;cursor: pointer;width: 25px;">
+                <i class=""  ng-class="like" ng-click="songLike(song)" ng-show="user != null && song != null"></i>
+              </div>
+              
+              <span class="audio-player-progress" style="display:inline-block">
+                <span class="audio-player-progress-bar"></span>
+              </span>
+            </div>
+          </div>             
+
+                </div>     
+                <ins class="split" ></ins>
+            <div ng-include="podcast_template" class="podcast-template col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+          </div>                          
+        </section> 
+        
+       
+        <section id="journal"  autoscroll="false" class="col-md-9 col-sm-7 col-md-offset-3 col-sm-offset-5 main-content slide-item right" ng-cloak>
+         <div class="sub-nav col-md-12 col-sm-12 col-xs-12 animated fadeIn" style=""  ng-cloak>
+            
+              <div class="main-tags animated fadeIn" align="center" style="height: 45px;">
+                  <div id="main-hook-menu" class="hook-item big-left" style="color:#292929;    float: left;       margin-top: 3px;" ng-click="showRadio();">           
+                    <i class="ion-navicon-round" style="font-size: 35px;cursor: pointer;opacity: 0.8;padding: 5px;color:black; " ></i>    
+                  </div>
+                  <div id="main-hook-menu" class="hook-item small-left" style="    float: left;
+    color: black;
+    margin-top: 0px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    padding-top: 3px;" ng-click="showRadio();">           
+                    <i class="ion-headphone" style="font-size: 35px;cursor: pointer;opacity: 0.8;padding: 5px;color:black; " ></i>    
+                  </div>  
+                  <div class="main-tags-menu">
+                    <a class="flow animated fadeIn" id="flow"  ui-sref="articles({'tag': 'all'})" ng-click="scrollTop();">поток</a>
+                    <a class="people animated fadeIn" id="people" ui-sref="people" ng-click="scrollTop();">люди</a>
+                    <a class="info animated fadeIn" id="info" ui-sref="info" ng-click="scrollTop();">о проекте</a>
+                    <a class="tags-menu animated fadeIn" id="tags" href="" ng-click="showTags()" style="margin-right: 5px;">теги</a>                   
+                  </div>
+                  <div class="main-mobile-menu animated fadeIn" ng-bind="curState"></div>
+                  <div id="enter" style="float:right;" ng-cloak>                    
+                    <a  ng-click="login()" ng-show="user == null">                                          
+                          <p class="vk-enter">Вход</p>                    
+                    </a> 
+                    <div class="user-info" ng-click="showUserMenu == true ? showUserMenu=false:showUserMenu=true" ng-cloak>                    
+                        <img ng-src="{{user.photoUrl}}" ng-show="user != null" style="border-radius:50%;width: 40px;height: 40px;">                       
+                          <span  id="username" ng-bind="user.username" style="color: #878685;text-transform: uppercase;letter-spacing: -1px;font-family: 'GothamProLight';font-weight: 400;
+    font-size: 11px;color: #000000;line-height: 47px;">                         
+                          </span> 
+                          <i class="ion-ios-arrow-down" ng-show="user != null"></i>                                                            
+                    </div>
+                  </div>
+                  <div id="right-hook" class="" ng-click="showSmallMenu()">            
+                    <i class="ion-navicon-round"></i>     
+                  </div>                   
+              </div>                                  
+              <div ng-style="{display:tagsDisplay}" style="display:none;padding-bottom: 5px;" align="center" class="main-menu-tags-container">
+                <div class="main-menu-tag" ng-repeat="tag in tags" ng-cloak style="display:inline-block">               
+                  <a ui-sref="articles({'tag': tag.urlname})" class="" ng-bind="::'#' + tag.name" ng-click="scrollTop();showTags()" style="color: #000000;"></a>
+                </div>  
+              </div>            
+          </div>             
+          <!-- <div class="my-scroll-bar" style="width:98%; height:auto;">--> 
+ <section id="right-hook-menu" ng-swipe-right="closeMenu()" class="hook-menu-min slide-item hook-closed">				
+		<div class="hook-container" style="text-align:center">
+        <div id="right-hook" class="" ng-click="showSmallMenu()" style="position: absolute;
+    right: 0px;">    
+              <i class="ion-close-round" style="color:#f7f7f7;font-size: 35px;"></i>
+                  
+        </div>
+        <div ng-swipe-right="closeMenu()">
+                <div style="margin-top: 35px;
+    text-align: center;
+    margin-bottom: 20px;">      
+        <div ng-swipe-right="closeMenu()" style="display: inline-block;
+    color: #f7f7f7;
+    font-size: 15px;
+    font-family: GothamProLight;">HUBOFCULTURE</div>         
+      </div>    
+        <ins style="    display: block;
+    height: 2px;
+    overflow: hidden;
+    background: rgb(49, 49, 49) none repeat scroll 0px 0px;
+    border-top: 1px solid rgb(29, 29, 29);
+    /* padding: 0px 5px 0px 0px; */
+    margin: 0px 14px 0px 14px;" class="split"></ins>
+    <a ng-swipe-right="closeMenu()" ui-sref="articles({'tag': 'all'})" ng-click="scrollTop();showSmallMenu()" style="width: 100%;color: #f7f7f7;font-size: 11px;font-family: GothamProLight;padding: 8px 0px 8px 0px;display: inline-block;">
+          ПОТОК
+        </a>
+        <ins style="    display: block;
+    height: 2px;
+    overflow: hidden;
+    background: rgb(49, 49, 49) none repeat scroll 0px 0px;
+    border-top: 1px solid rgb(29, 29, 29);
+    /* padding: 0px 5px 0px 0px; */
+    margin: 0px 14px 0px 14px;" class="split"></ins>
+    <a ng-swipe-right="closeMenu()" ui-sref="people" ng-click="scrollTop();showSmallMenu()"  style="    color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 8px 0px;
+    display: inline-block;width: 100%;">
+          ЛЮДИ
+        </a>
+        <ins style="    display: block;
+    height: 2px;
+    overflow: hidden;
+    background: rgb(49, 49, 49) none repeat scroll 0px 0px;
+    border-top: 1px solid rgb(29, 29, 29);
+    /* padding: 0px 5px 0px 0px; */
+    margin: 0px 14px 0px 14px;" class="split"></ins>
+    <a ng-swipe-right="closeMenu()" ui-sref="info" ng-click="scrollTop();showSmallMenu()" style="    color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 8px 0px;
+    display: inline-block;width: 100%;">
+          О ПРОЕКТЕ 
+        </a>
+        <ins style="    display: block;
+    height: 2px;
+    overflow: hidden;
+    background: rgb(49, 49, 49) none repeat scroll 0px 0px;
+    border-top: 1px solid rgb(29, 29, 29);
+    /* padding: 0px 5px 0px 0px; */
+    margin: 0px 14px 0px 14px;" class="split"></ins>
+     <div>
+      <div ng-swipe-right="closeMenu()" style="color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 0px 0px;
+    display: inline-block;">ТЕГИ: 
+        </div>
+    </div>
+        </div>
+
+    <div style="padding: 0px 15px 0px 15px;
+    height: calc(100% - 257px);
+    overflow-y: scroll;
+    height: -webkit-calc(100% - 257px);">
+   
+    
+<div ng-repeat="tag in ::tags" style="display: inline-block;
+    margin: 0px 10px 0px 0px;">
+          <a ui-sref="articles({'tag': tag.urlname})" ng-click="scrollTop();showSmallMenu()" style="    color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 8px 0px;
+    display: inline-block;" ng-bind="::'#'+ tag.name"> 
+        </a>
+
+        </div>
+
+        
+    </div>
+    <div ng-swipe-right="closeMenu()" style="    
+   
+    text-align: center;
+    width: 100%;">
+         <ins style="    display: block;
+    height: 2px;
+    overflow: hidden;
+    background: rgb(49, 49, 49) none repeat scroll 0px 0px;
+    border-top: 1px solid rgb(29, 29, 29);
+    /* padding: 0px 5px 0px 0px; */
+    margin: 0px 14px 0px 14px;" class="split"></ins>    
+        <div ng-click="login()" ng-show="user == null" style="    color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 8px 0px;
+    display: inline-block;cursor:pointer;height:36px">
+          ВОЙТИ 
+        </div>
+        <div ng-click="logout()" ng-show="user != null" style="    color: #f7f7f7;
+    font-size: 11px;
+    font-family: GothamProLight;
+    padding: 8px 0px 8px 0px;
+    display: inline-block;cursor:pointer;height:36px">
+          <img ng-src="{{user.photoUrl}}" style="border-radius:50%;width: 25px;
+    height: 25px;">
+          ВЫЙТИ 
+        </div>
+    </div>
+
+		</div>		
+		</section>		  
+			  <div id="content" scrollbar-theme="rounded-dots-dark" ui-view afkl-image-container class="" ng-click="closeMenu();">
+			  
+			  </div> 
+		
+     
+           
+        </section><!-- main content -->
+		
+
+        
+        <ul class="animated fadeIn" ng-show="showUserMenu" ng-cloak style="    top: 48px;
+    right: 0px;
+    position: fixed;
+    right: 20px;
+    left: auto;
+    /* top: 100%; */
+    /* left: 0; */
+    z-index: 1000;
+    /* display: none; */
+    /* float: left; */
+    width: 100px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    /* border-top: 0; */">
+      <li>
+        <a href="" ng-click="logout()" style="margin: 3px 20px;
+    min-height: 0;color:black;font-family: GothamProLight;">
+          <i class="ion-log-out"></i>
+          ВЫХОД
+        </a>                      
+      <li>                        
+    </ul>                    
+      </div> <!--/row -->
+    </main> <!-- /container -->
+    
+    <script src="dk-fm/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+    <script src="/libs/player.js"></script>       
+    <script src="/libs/angular.js"></script>
+     <script src="/angular-modules/angular-touch.js"></script> 
+    <script src="/angular-modules/angular-ui-router.min.js"></script>  
+    <script src="/admin/dist/textAngular-rangy.min.js" ></script>
+    <script src="/admin/dist/textAngular-sanitize.min.js"></script>
+    <script src="/admin/dist/textAngular.min.js"></script>      
+    <script src="/angular-modules/lazy-image.min.js"></script> 
+    <script src="/dk-fm/js/index.js"></script>
+    <script src="/dk-fm/js/controllers/mainController.js"></script>       
+    <script src="/dk-fm/js/controllers/articlesController.js"></script>
+    <script src="/dk-fm/js/controllers/articleController.js"></script>
+    <script src="/dk-fm/js/controllers/peopleController.js"></script>
+    <script src="/dk-fm/js/controllers/peopleInfoController.js"></script>   
+    <script src="/dk-fm/js/controllers/infoController.js"></script>     
+    <script src="/dk-fm/js/services/httpService.js"></script>
+    <script src="/dk-fm/js/dirictives/ester-view.js"></script>	
+	<script src="/dk-fm/js/jquery.mCustomScrollbar.js"></script>	
+<!-- Yandex.Metrika counter --><script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter34367850 = new Ya.Metrika({ id:34367850, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/34367850" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+  </body>
+</html>

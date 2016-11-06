@@ -1,0 +1,10 @@
+/* font-family: "SourceSansProBold"; */
+@font-face {
+    font-family: "SourceSansProBold";
+    src: url("../fonts/SourceSansProBold/SourceSansProBold.eot");
+    src: url("../fonts/SourceSansProBold/SourceSansProBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/SourceSansProBold/SourceSansProBold.woff") format("woff"),
+    url("../fonts/SourceSansProBold/SourceSansProBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

@@ -1,0 +1,82 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak" >
+        				<div class="row">
+        				<div class="col-md-12">
+				            <div class="col-md-3">
+				                <fieldset>
+				                    <legend>Личность</legend>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Статус</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<select data-ng-model="people.status " ng-options="status.name for status in statuses" ng-change="">
+  													<option value="" disabled>Выберите статус</option >	
+  												</select>		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>                 
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Имя</label>
+				                        <div class="controls">
+				                            <input type="text" name="title" data-ng-model="people.title" class="span10" style="width: 230px;"/>  
+				                        </div>
+				                        <div class="control-group" ng-show="title_error">
+				                        	<label class="control-label" for="suffix" style="color:red">Введи Имя</label>				                        
+				                    	</div>
+				                    </div>			                    
+				                    <div class="control-group" ng-show="showPhoto">
+				                        <label class="control-label" for="suffix">Фото</label>
+				                        <div class="controls">
+				                        	<img ng-src="{{people.photo.url}}" style="width:50%; margin-bottom:5px">    						        				                            
+				                        </div>
+				                        <button class="btn" ng-click="deletePhoto()">Удалить</button>  
+				                    </div>
+				                    <div class="control-group" ng-show="!showPhoto">
+				                        <label class="control-label" for="suffix">Лого</label>
+				                        <div class="controls">
+				                        	<input type="file" ngf-select ng-model="photo" name="file" accept="image/*" ngf-max-size="4MB">      </div>  
+				                    </div>
+				                    <div class="control-group" ng-show="photo_error">
+				                        <label class="control-label" for="suffix" style="color:red">Загружаем только png, jpeg или gif</label>				                        
+				                    </div>
+				                    
+				                    
+				                    	
+				                    <div class="control-group">
+				                <div class="controls row-fluid">
+				                    <div class="span12" style="margin: 20px 0px 0px 15px;">
+				                        <button class="btn" data-ng-click="save(photo, people)">
+				                        	<i class="icon-remove-sign"></i>Сохранить
+				                        </button> 
+				                        <a class="btn" ui-sref="people"><i class="icon-remove-sign"></i>Назад</a>
+				                    </div>
+				                </div>				                
+				            </div>			                    			                    	                   
+				                </fieldset>
+				            </div>
+				            <div class="col-md-9">
+				                <fieldset>			     
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Содержание</label>
+				                        <div text-angular  ng-model="people.content" name="demo-editor" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
+				                    </div>				                    
+				                    <div class="control-group" ng-show="content_error">
+				                        <label class="control-label" for="suffix" style="color:red">Напиши содержание</label>				                        
+				                    </div>			                   
+				                </fieldset>
+				            </div>
+				          </div> 
+				        </div>				        
+				       </form>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

@@ -1,0 +1,95 @@
+<style type="text/css">
+	.ta-scroll-window {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+	button[name="html"] {
+		display: none !important;
+	}
+	button[name="insertImage"] {
+		display: none !important;
+	}
+	button[name="insertLink"] {
+		display: none !important;
+	}
+	button[name="insertVideo"] {
+		display: none !important;
+	}
+</style>
+
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak"  ng-submit="addInstagram(newinstagram)">
+        				<div class="row">
+        				<div class="col-md-12">
+        				
+				            <div class="col-md-3">
+				                <fieldset>
+                			  	 <div class="control-group">
+				                        <label class="control-label" for="title">Заголовок</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<input type="text" size="40" required placeholder="Заголовок" ng-model="newinstagram.title" style="margin: 0px 40px 0px 0px;">		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Сcылка</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<input type="text" size="40" required  placeholder="Ccылка" ng-model="newinstagram.url" ng-change="change()" style="margin: 10px 40px 0px 0px;">		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                        <div post-render ng-bind-html="newinstagram.url | trust">
+				                        	
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Теги</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  														<ui-select multiple ng-model="newinstagram.tags" theme="select2" ng-disabled="disabled" style="width: 230px;">
+    												<ui-select-match placeholder="Выбери теги...">{{'#'+ $item.name}}</ui-select-match>
+    													<ui-select-choices repeat="tag in tags | propsFilter: {name: $select.search}">
+      														<div ng-bind-html="tag.name | highlight: $select.search"></div>      
+    													</ui-select-choices>
+  							</ui-select>
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <div class="controls">
+				                            <div class="controls" style="margin-top:10px">	
+  													<input type="Submit" class="btn btn-success" value="Добавить" />		
+  												    <a ui-sref="instagram" class="btn ">Назад</a>                   		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+                			  </fieldset>
+				            </div>
+				            <div class="col-md-9">
+				                <fieldset>			     
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Содержание</label>
+				                        <div text-angular  ng-model="newinstagram.content" name="demo-editor" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
+				                    </div>			                    
+				                                   
+				                </fieldset>
+
+				            </div> 
+				        				          </div> 
+				        </div>				        
+				       </form>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

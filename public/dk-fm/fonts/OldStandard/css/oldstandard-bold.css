@@ -1,0 +1,10 @@
+/* font-family: "OldStandardBold"; */
+@font-face {
+    font-family: "OldStandardBold";
+    src: url("../fonts/OldStandardBold/OldStandardBold.eot");
+    src: url("../fonts/OldStandardBold/OldStandardBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardBold/OldStandardBold.woff") format("woff"),
+    url("../fonts/OldStandardBold/OldStandardBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

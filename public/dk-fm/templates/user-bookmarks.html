@@ -1,0 +1,54 @@
+<div class="container-lv3 animated fadeIn" style="height: 100%;
+    margin: -10px 8%;">
+<div style="    
+    text-align: center;
+    font-size: 13px;
+    font-family: GothamProLight;  
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    height: 36px;
+    cursor: pointer;
+   
+    color: white;
+    text-shadow: 1px 1px 1px black;   
+    background: rgba(255,255,255, 0.3);
+    height: 40px;
+    line-height: 37px;" ng-click="goMain()">
+        <i class="ion-arrow-left-c"  style="font-size: 20px;
+   
+    display: inline-block;
+    float: left;
+    margin-left: 10px;"></i>
+        <span style="font-size: 20px;
+    /* line-height: 0; */
+    display: inline-block;
+    float: left;
+    margin-left: 18px;">Назад</span>
+    </div>
+    <div class="" style="height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;margin-top:3px;">
+    	<div class="" ng-repeat="(key, value) in tracks" my-repeat-directive style="cursor: pointer;
+    font-size: 13px;
+    min-height: 13px;
+    padding: 0px 0 0px 0px;
+    position: relative;
+    color: white;" ng-click="playSong($index)" ng-class="{'curSong':curSong == key}">
+        	<div class="" style="padding: 8px 0px 8px 15px;font-family: GothamProLight;" ng-bind="value.name">			
+        	</div>	
+        	<!-- <div class="" ng-bind="">
+        			
+        	</div> -->
+        	<ins class="split" style="    margin: 0px 0px 0px 0px;
+    background: #313131;
+    border-top: 1px solid #1d1d1d;
+    display: block;
+    height: 2px;
+    overflow: hidden;"></ins>
+        </div>
+    </div>
+
+</div>
+
+
+

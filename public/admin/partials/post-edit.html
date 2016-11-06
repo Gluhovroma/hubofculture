@@ -1,0 +1,144 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row" ng-hide="loading">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">                
+                <div class="box-body">					
+					<form name="postForm" class="ng-cloak" >
+        				<div class="row">
+        				<div class="col-md-12">
+				            <div class="col-md-3">
+				                <fieldset>
+				                    <legend>Пост</legend>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Статус</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<select data-ng-model="post.status " ng-options="status.name for status in statuses" ng-change="">
+  													<option value="" disabled>Выберите статус</option >	
+  												</select>		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                     <div class="control-group">
+				                        <label class="control-label" for="title">Структура</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+  												<select data-ng-model="post.type " ng-options="type.name for type in types" ng-change="disableAnnotation(post.type)">
+  													<option value="" disabled>Выберите структуру</option >	
+  												</select>		
+  												                          		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Теги</label>
+				                        <div class="controls">
+				                            <div class="controls">	
+
+  												<ui-select multiple ng-model="post.tags" theme="select2" ng-disabled="disabled" style="width: 230px;">
+    												<ui-select-match placeholder="Выбери теги...">{{'#'+ $item.name}}</ui-select-match>
+    													<ui-select-choices repeat="tag in tags | propsFilter: {name: $select.search}">
+      														<div ng-bind-html="tag.name | highlight: $select.search"></div>      
+    													</ui-select-choices>
+  												</ui-select>					                            		                            
+				                        	</div>				                            
+				                        </div>
+				                    </div>
+				                    <div class="control-group">
+				                        <label class="control-label" for="title">Название</label>
+				                        <div class="controls">
+				                            <input type="text" name="title" data-ng-model="post.title" class="span10" style="width: 230px;"/>  
+				                        </div>
+				                        <div class="control-group" ng-show="title_error">
+				                        	<label class="control-label" for="suffix" style="color:red">Введи название</label>				                        
+				                    	</div>
+				                    </div>
+				                    <div class="control-group" ng-show="showAnnotation">
+				                        <label class="control-label" for="firstName">Аннотация</label>
+				                        <div class="controls">
+				                            <textarea data-ng-model="post.annotation" class="span10" style="width: 230px;height:200px"> </textarea>           
+				                        </div>
+				                    </div>				                    
+				                    
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Автор</label>
+				                        <div class="controls">
+				                            <input type="text" name="suffix" data-ng-model="post.author" class="span10" style="width: 230px;" />				                           
+				                        </div>
+				                    </div>
+				                    <div class="control-group" ng-show="showPhoto">
+				                        <label class="control-label" for="suffix">Лого</label>
+				                        <div class="controls">
+				                        	<img ng-src="{{post.photo.url}}" style="width:50%; margin-bottom:5px">    						        				                            
+				                        </div>
+				                        <button class="btn" ng-click="deletePhoto()">Удалить</button>  
+				                    </div>
+				                    <div class="control-group" ng-show="!showPhoto">
+				                        <label class="control-label" for="suffix">Лого</label>
+				                        <div class="controls">
+				                        	<input type="file" ngf-select ng-model="photo" name="file" accept="image/*" ngf-max-size="4MB">      </div>  
+				                    </div>
+				                    <div class="control-group" ng-show="photo_error">
+				                        <label class="control-label" for="suffix" style="color:red">Загружаем только png, jpeg или gif</label>				                        
+				                    </div>
+				                    <div class="control-group" ng-show="showSong">
+				                        <label class="control-label" for="suffix">Саунд</label>
+				                        <div class="controls">
+				                        	<audio controls ng-repeat="song in post.songs" style="width: 100%;
+    margin-bottom: 5px;">
+											  <source src="{{song.url}}" type="audio/mp3">											  
+											  Your browser does not support the audio tag.
+											</audio>                      									        			                            
+				                        </div>
+				                        <button class="btn" ng-click="deleteSong()">Удалить</button>   
+				                    </div>	
+				                    <div class="control-group" ng-show="!showSong">
+				                        <label class="control-label" for="suffix">Саунд</label>
+				                        <div class="controls">
+				                        	<input type="file" ngf-select ng-model="song" name="file" accept="*" ngf-max-size="20MB" multiple>             
+				                        </div>  
+				                    </div>
+				                    <div class="control-group" ng-show="song_error">
+				                        <label class="control-label" for="suffix" style="color:red">Загружаем только mp3</label>				                        
+				                    </div>	
+				                    <div class="control-group">
+				                <div class="controls row-fluid">
+				                    <div class="span12" style="margin: 20px 0px 0px 15px;">
+				                        <button class="btn" data-ng-click="save(photo, song, post)">
+				                        	<i class="icon-remove-sign"></i>Сохранить
+				                        </button> 
+				                        <a class="btn" ui-sref="posts"><i class="icon-remove-sign"></i>Назад</a>
+				                    </div>
+				                </div>				                
+				            </div>			                    			                    	                   
+				                </fieldset>
+				            </div>
+				            <div class="col-md-9">
+				                <fieldset>			     
+				                    <div class="control-group">
+				                        <label class="control-label" for="suffix">Содержание</label>
+				                        <div text-angular  ng-model="post.content" name="demo-editor" ta-text-editor-class="border-around" ta-html-editor-class="border-around"></div>
+				                    </div>				                    
+				                    <div class="control-group" ng-show="content_error">
+				                        <label class="control-label" for="suffix" style="color:red">Напиши содержание</label>				                        
+				                    </div>			                   
+				                </fieldset>
+				            </div>
+				          </div> 
+				        </div>				        
+				       </form>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+    <div style="position:absolute;height:100%;width:100%;z-index:2;background:black; opacity:0.4" ng-show="loading">
+    	<div style="font-size:40px">
+    		Загружаю... (если долго не загружается значит тебе не повезло, нужно все заново)
+    	</div>
+    	
+	</div>
+</section>
+

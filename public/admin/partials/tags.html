@@ -1,0 +1,64 @@
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">
+            
+                <div class="box-header with-border">
+                	<h3 class="box-title">Теги</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+					<div align="right">
+						<!--  <select ng-model="newtag.weight" ng-options="weight.value for weight in weights"></select> -->
+							 <form name="postForm" class="ng-cloak" ng-submit="addTag(newtag)">
+								<input type="text" size="40" placeholder="Название" ng-model="newtag.name" required>					
+								<input type="Submit" class="btn btn-success" value="Добавить" />
+							</form>					
+					 </div>
+					<br>
+					<div id="example11_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	                  		
+	                  		<div class="row">
+	                  			<div class="col-sm-12">
+	                  				<table id="example11" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="example11_info">
+	                    				<thead>
+	                      					<tr role="row">
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Название: активировать для сортировки столбца по возрастанию" style="width: 218.889px;">
+	                      							<center>Тег</center>
+	                      						</th>	                      						
+	                      						<!-- <th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Название: активировать для сортировки столбца по возрастанию" style="width: 218.889px;">
+	                      							<center>Вес</center>
+	                      						</th> -->	
+	                      					</tr>
+	                    				</thead>
+	                    				<tbody>
+	                    					<tr role="row" class="odd" ng-repeat="tag in tags">
+	                        					<td>
+	                        						<center ng-bind="tag.name"></center>
+	                        					</td>
+	                        					<td>
+	                        					<!-- 	<center ng-bind="tag.weight"></center>
+	                        					</td>	 -->
+	                        						
+	                        					
+	                        					<td style="width: 10%;">
+	                        						<center>													
+														<button style="width:100%;margin-top:2px;" class="btn btn-danger" ng-click="deleteTag(tag)">Удалить</button>
+													
+										     		</center>
+										     	</td>
+	                      					</tr>
+	                      				</tbody>
+	                  				</table>
+	                  			</div>
+	                  		</div>
+	                  		<div class="row">
+	                  			<center><button ng-click="loadTags()" class="btn">Показать еще...</button></center>
+	                  		</div>
+                  	</div>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>

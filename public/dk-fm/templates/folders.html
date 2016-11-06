@@ -1,0 +1,179 @@
+	<!-- <div class="row" style="text-align:center; ">
+     <div class="r-controls" ng-click="goTimetable();" style="border-radius: 8px;">
+     	<div  class="control"  style="padding: 0 0 0 20%;" titlee="Расписание">
+			<i class="ion-clipboard"></i>
+		</div>
+     </div>
+     <div class="r-controls" ng-click="goBookmarks()" ng-show="user != null" style="border-radius:8px;">
+		<div  class="control" style="padding: 0 0 0 37%;"  titlee="Закладки">
+			<i class="ion-bookmark"></i> 
+		</div>
+     </div> 
+	</div>
+	<br/>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<span class="r-content-header" style="font-family:GothamProLight;font-size:30px;">Подкасты</span> 
+	</div>-->
+	<div class="row" style="margin-left: -30px; margin-top:5%;margin-right: -30px; text-align:center;">
+		
+		<div style=" margin-left:10%; width:20%; float:left; cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goTimetable()">
+					<img src="/dk-fm/images/plate/sche.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Расписание</div>
+		</div>
+		<div style=" margin-left:10%; width:20%; float:left;  cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goBookmarks()">
+					<img src="/dk-fm/images/plate/book.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Закладки</div>
+		</div>
+		<div style=" margin-left:10%; width:20%; float:left;  cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goPodcast('Broadcast')">
+					<img src="/dk-fm/images/plate/flow1.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Эфиры</div>
+		</div>
+		
+		
+		
+		
+		<!--
+		<div class="col-ld-6 col-md-6 col-sm-6 col-xs-6 no-margin" >
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"   ng-click="goPodcast('polygonal')">
+				<img src="dk-fm/images/plate/4onflor.jpg">
+				<div class="auto-container no-margin">
+					<div class="pd-date pd-item">Updated: 08.12</div>
+					<div class="pd-name pd-item">Ломаная бочка</div>
+					
+					<div class="genres-line">
+						<div class="pd-genre pd-item">D'n'B</div><div class="pd-genre pd-item">Dub</div><div class="pd-genre pd-item">IDM</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-ld-6 col-md-6 col-sm-6 col-xs-6 no-margin" >
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"   ng-click="goPodcast('RockNRoll')">
+				<img src="dk-fm/images/plate/4onflor.jpg">
+				<div class="auto-container no-margin">
+					<div class="pd-date pd-item">Updated: 08.12</div>
+					<div class="pd-name pd-item">Rock'n'Roll</div>
+					
+					<div class="genres-line">
+						<div class="pd-genre pd-item">Rock</div><div class="pd-genre pd-item">Dub</div><div class="pd-genre pd-item">IDM</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-ld-6 col-md-6 col-sm-6 col-xs-6 no-margin" >
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"   ng-click="goPodcast('Broadcast')">
+				<img src="dk-fm/images/plate/4onflor.jpg">
+				<div class="auto-container no-margin">
+					<div class="pd-date pd-item">Updated: 08.12</div>
+					<div class="pd-name pd-item">Эфиры</div>
+					<div class="genres-line">
+						
+					</div>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="row" style="margin-left: -30px; margin-top:5%;margin-right: -30px; text-align:center;">
+		<div style=" margin-left:10%; width:20%; float:left; cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goPodcast('four_on_the_floor')">
+					<img src="/dk-fm/images/plate/4onflor.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Прямая бочка</div>
+		</div>
+		<div style=" margin-left:10%; width:20%; float:left; cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goPodcast('polygonal')">
+					<img src="/dk-fm/images/plate/poly.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Ломаная бочка</div>
+		</div>
+		<div style=" margin-left:10%; width:20%; float:left; cursor:pointer" >
+			<div style="width:100%;">
+				<div class="folder-head"> </div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-control">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 podcast-groups no-margin"  ng-click="goPodcast('RockNRoll')">
+					<img src="/dk-fm/images/plate/rock.jpg">
+					<div class="auto-container no-margin">
+						
+						<!--<div class="pd-name pd-item">Прямая бочка</div>
+						
+						<div class="genres-line">
+							<div class="pd-genre pd-item">Trance</div><div class="pd-genre pd-item">House</div><div class="pd-genre pd-item">Techno</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			<div class="pd-newname">Rock'n'roll</div>
+		</div>
+	</div>
+                    

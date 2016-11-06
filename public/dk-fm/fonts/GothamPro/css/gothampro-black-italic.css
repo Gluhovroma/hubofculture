@@ -1,0 +1,10 @@
+/* font-family: "GothamProBlackItalic"; */
+@font-face {
+    font-family: "GothamProBlackItalic";
+    src: url("../fonts/GothamProBlackItalic/GothamProBlackItalic.eot");
+    src: url("../fonts/GothamProBlackItalic/GothamProBlackItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/GothamProBlackItalic/GothamProBlackItalic.woff") format("woff"),
+    url("../fonts/GothamProBlackItalic/GothamProBlackItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

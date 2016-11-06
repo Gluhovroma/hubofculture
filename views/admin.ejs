@@ -1,0 +1,186 @@
+﻿<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>dk-fm-admin-panel</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
+        <link rel="stylesheet" href="/admin/stylesheets/bootstrap.min.css">
+        <link rel="stylesheet" href="/angular-modules/select.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/admin/stylesheets/AdminLTE.min.css">
+        <link rel="stylesheet" href="/admin/stylesheets/_all-skins.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300">
+        <link rel="stylesheet" href="/admin/dist/textAngular.css">
+        <link rel="stylesheet" href="/admin/stylesheets/style.css">
+	<link rel="stylesheet" href="/dk-fm/css/typography.css"> 
+        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+    </head>
+    <body ng-app="dkfm" style="" class="hold-transition skin-blue sidebar-mini">    
+       <div class="wrapper">
+            <header class="main-header">         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Навигация</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav"></ul>
+                    </div>
+                </nav>
+            </header>  
+            <aside class="main-sidebar">       
+                <section class="sidebar">          
+                    <ul class="sidebar-menu">
+                        <li class="header">Навигация</li> 
+                        <li>
+                            <a ui-sref="home">
+                                <i class="fa fa-home"></i> 
+                                <span>Главная</span>            
+                            </a>
+                        </li>      
+                        <li>
+                            <a ui-sref="posts">
+                                <i class="fa fa-book"></i> 
+                                <span>Статьи</span>            
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="people">
+                                <i class="fa fa-user"></i> 
+                                <span>Люди</span>            
+                            </a>
+                        </li>
+                        <li>
+                            <a ui-sref="timetable">
+                                <i class="fa fa-calendar"></i> 
+                                <span>Рассписание радио</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" ui-sref="radio-admin">
+                                <i class="fa fa-rss"></i> 
+                                <span>Админка радио</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a ui-sref="instagram">
+                                <i class="fa fa-instagram "></i> 
+                                <span>Инстаграм</span>
+                            </a>
+                        </li>  -->     
+                                   
+                        <li>
+                            <a ui-sref="video">
+                                <i class="fa fa-youtube-play "></i> 
+                                <span>Видео</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="" ui-sref="soundcloud">
+                                <i class="fa fa-soundcloud "></i> 
+                                <span>SoundCloud</span>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="" ui-sref="tags">
+                                <i class="fa fa-tags"></i> 
+                                <span>Хэш теги</span>
+                            </a>
+                        </li> 
+                     <!--    <li>
+                            <a href="" ui-sref="info">
+                                <i class="fa fa-info"></i> 
+                                <span>Инфо</span>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="" ui-sref="author">
+                                <i class="fa fa-info"></i> 
+                                <span>Авторы</span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="" ui-sref="creator">
+                                <i class="fa fa-info"></i> 
+                                <span>Создатели</span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="" ui-sref="dj">
+                                <i class="fa fa-info"></i> 
+                                <span>DJ's</span>
+                            </a>
+                        </li> 
+                         <li>
+                            <a href="" ui-sref="moviemaker">
+                                <i class="fa fa-info"></i> 
+                                <span>Создатели видео</span>
+                            </a>
+                        </li>  -->                      
+                                                
+                        
+                        <li>
+                            <a href="/auth/signout">
+                                <i class="fa fa-sign-out"></i>
+                                <span>Выход</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </section>      
+            </aside>      
+            <div class="content-wrapper">
+               <div ui-view></div>
+            </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.3.0
+                </div>
+               <!--  <strong>Разработчик <a href="https://vk.com/id207958125">Роман Глухов</a>.</strong> -->
+            </footer>     
+            <div class="control-sidebar-bg"></div>      
+    </div>
+
+        <script src="/libs/jQuery-2.1.4.min.js"></script>        
+        <script src="/libs/bootstrap.js"></script>
+        <script src="/libs/app.min.js"></script>
+        <script src="/libs/angular.js"></script>      
+           
+        <script src="/angular-modules/angular-file-upload.js"></script>             
+        <script src="/angular-modules/angular-ui-router.min.js"></script> 
+        <script src="/admin/dist/textAngular-rangy.min.js" ></script>
+        <script src="/admin/dist/textAngular-sanitize.min.js"></script>
+        <script src="/admin/dist/textAngular.min.js"></script>       
+        <script src="/angular-modules/select.js"></script>       
+        <script src="/angular-modules/angular-utf8-base64.js"></script>
+        <script src="/angular-modules/ngStorage.js"></script>        
+        <script src="/angular-modules/angular-notify/angular-notify.js"></script>     
+        <script src="/angular-modules/anguvideo.js"></script>   
+        <script src="/libs/dateFormat.js"></script>
+        <script src="/admin/javascripts/admin.js"></script>       
+        <script src="/admin/javascripts/controllers/homeController.js"></script>
+        <script src="/admin/javascripts/controllers/postsController.js"></script>
+        <script src="/admin/javascripts/controllers/postEditController.js"></script>
+        <script src="/admin/javascripts/controllers/postDeleteController.js"></script>
+        <script src="/admin/javascripts/controllers/peopleController.js"></script>
+        <script src="/admin/javascripts/controllers/peopleEditController.js"></script>
+        <script src="/admin/javascripts/controllers/peopleDeleteController.js"></script>
+        <script src="/admin/javascripts/controllers/instagramController.js"></script>
+        <script src="/admin/javascripts/controllers/instagramEditController.js"></script>
+        <script src="/admin/javascripts/controllers/tagsController.js"></script>
+        <script src="/admin/javascripts/controllers/timetableController.js"></script>
+        <script src="/admin/javascripts/controllers/timetableEditController.js"></script>
+        <script src="/admin/javascripts/controllers/timetableDeleteController.js"></script>
+        <script src="/admin/javascripts/controllers/videoController.js"></script>
+        <script src="/admin/javascripts/controllers/soundCloudController.js"></script>       
+        <script src="/admin/javascripts/controllers/radioAdminController.js"></script>   
+         <script src="/admin/javascripts/controllers/infoController.js"></script>  
+         <script src="/admin/javascripts/controllers/authorController.js"></script>    
+         <script src="/admin/javascripts/controllers/moviemakerController.js"></script>  
+         <script src="/admin/javascripts/controllers/djController.js"></script> 
+         <script src="/admin/javascripts/controllers/creatorController.js"></script> 
+        <script src="/admin/javascripts/services/httpService.js"></script>
+         
+    </body>
+</html>

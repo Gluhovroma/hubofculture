@@ -1,0 +1,43 @@
+<div class="animated fadeIn post-container" ng-class="class">
+  <div class="card half_card mix_card mix waypoint start col-md-12"  style="padding:0">
+    <div class="reason">      
+      <p class="byline">     
+        <span class="date">
+          <abbr title="{{simple.date}}" ng-bind="instagram.date"></abbr>
+        </span>
+       <!--  <i class="glyphicon glyphicon-pencil" class="avatar" style="font-size: 15px; opacity: 0.8; margin:0px 3px 0px 3px">       
+        </i> -->
+        <strong style="color:black; opacity:0.6" ng-bind="instagram.author"></strong>
+      </p>
+    </div>
+    <div  style="margin-top:5px; padding:0" ng-class="{'col-md-6': colmd6}">
+	
+		<div class="" style="overflow: hidden;max-height:340px" >  
+        <div post-render ng-bind-html="instagram.url | trust"  >                
+        </div>      
+   
+	</div>
+    
+</div>
+    <div ng-class="{'col-md-6': colmd6}" style="padding:0px 15px 0px 15px">
+      <h3 class="title black" style="color: #333;font-size: 20px;0" ng-bind="instagram.title">
+  
+    </h3>  
+    <div class="frontside">
+      <div class="grid_tags tags">
+        <a ui-sref="articles({'tag': tag.urlname})" class="tag" title="Yeah Yeah Yeahs  " ng-repeat="tag in simple.tags  | limitTo:7">
+            <i class="ion-ios-pricetag" ></i>
+                    <span  ng-bind="tag.name"></span>
+          </a>
+      </div>
+    </div>
+    <div class="annotation" style="" ng-bind-html="instagram.content">
+    
+    </div>
+    </div>
+     
+     
+  </div>
+</div>
+
+

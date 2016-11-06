@@ -1,0 +1,60 @@
+ 
+
+
+    <div style="min-height:101%;">       
+        <div class="col-md-12 col-sm-12 col-xs-12 animated fadeIn" id="wall" ng-cloak ng-style="{display:people}" ng-class="{'article-big': !radioOpenBig}">
+
+            <div ng-repeat="person in persons" class="person-item col-md-3 col-sm-4 col-xs-6">
+               
+                    <div style="padding: 15px;">
+                        <a ui-sref="people.peopleInfo({'name': person.urlname})">
+                        <div afkl-lazy-image="{{person.photo.url}}" class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname-people" afkl-lazy-image-options="{{nolazy}}"></div>
+                            
+                        </a>
+                    </div>
+                    <h5 style="margin: 0;" ng-bind="person.last_mod " style="font-family:'GothamProLight'">
+                        
+                    </h5>
+                    <a ui-sref="people.peopleInfo({'name': person.urlname})" style="color:#333;font-size:20px;font-family:'GothamProLight'">
+                        <h3 style="margin: 0;" ng-bind="person.title" ></h3> 
+                    </a>                                      
+            
+            </div>
+            
+           
+            <div class="row" ng-show="loading">
+                <div class="col-md-12" align="center" style="padding-bottom: 10px;">
+                    <ion-spinner icon="spiral" class="spinner spinner-spiral">
+                        <svg viewBox="0 0 64 64" style="width: 28px;height: 28px;">
+                            <g>
+                                <defs>
+                                    <linearGradient id="sGD" gradientUnits="userSpaceOnUse" x1="55" y1="46" x2="2" y2="46">
+                                        <stop offset="0.1" class="stop1"></stop>
+                                        <stop offset="1" class="stop2"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <g stroke-width="4" stroke-linecap="round" fill="none" transform="rotate(356.541 32.0001 32.0001)">
+                                    <path stroke="url(#sGD)" d="M4,32 c0,15,12,28,28,28c8,0,16-4,21-9"></path>
+                                    <path d="M60,32 C60,16,47.464,4,32,4S4,16,4,32"></path>
+                                    <animateTransform values="0,32,32;360,32,32" attributeName="transform" type="rotate" repeatCount="indefinite" dur="750ms"></animateTransform>
+                                </g>
+                            </g>
+                        </svg>
+                    </ion-spinner>
+                </div>
+            </div>
+            
+        </div>
+        <div ng-cloak>
+            <div ui-view autoscroll="false" style=""></div>
+        </div>
+    </div>
+
+    
+
+    
+
+
+                        
+
+                        

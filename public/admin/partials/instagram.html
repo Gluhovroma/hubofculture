@@ -1,0 +1,94 @@
+<style type="text/css">
+	.ta-scroll-window {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+	button[name="html"] {
+		display: none !important;
+	}
+	button[name="insertImage"] {
+		display: none !important;
+	}
+	button[name="insertLink"] {
+		display: none !important;
+	}
+	button[name="insertVideo"] {
+		display: none !important;
+	}
+</style>
+
+
+<section class="content" style="margin-bottom: -20px;">
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+    	<div class="col-md-12">
+            <div class="box">
+                <div class="box-header with-border">
+                	<h3 class="box-title">Инстаграм</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                
+					<div align="right">
+							 	
+  						<button class="btn btn-success" ui-sref="instagram-edit">Добавить</button>					                    
+				                    					
+										
+					 </div>
+					<br>
+					<div id="example11_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+	                  		
+	                  		<div class="row">
+	                  			<div class="col-sm-12">
+	                  				<table id="example11" class="table table-bordered table-striped dataTable no-footer" role="grid" aria-describedby="example11_info">
+	                    				<thead>
+	                      					<tr role="row">
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Название: активировать для сортировки столбца по возрастанию" style="width: 218.889px;">
+	                      							<center>Заголовок</center>
+	                      						</th>	
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Название: активировать для сортировки столбца по возрастанию" style="width: 20%;">
+	                      							<center>Инстаграм</center>
+	                      						</th>  
+	                      						    
+	                      						  
+	                      						                 						
+	                      						<th class="sorting" tabindex="0" aria-controls="example11" rowspan="1" colspan="1" aria-label="Дата создания: активировать для сортировки столбца по возрастанию" style="width: 118.889px;">
+	                      							<center>Дата создания</center>
+	                      						</th>                    						
+	                      					</tr>
+	                    				</thead>
+	                    				<tbody>
+	                    					<tr role="row" class="odd" ng-repeat="instagram_item in instagram">
+	                        					<td>
+	                        						<center ng-bind="instagram_item.title"></center>
+	                        					</td>                        					
+	                        					
+	                        					<td>
+	                        						<center post-render ng-bind-html="instagram_item.url | trust"></center>
+	                        					</td>	
+	                        					
+	                        					
+	                        					
+	                        					<td>
+	                        						<center ng-bind="instagram_item.created_at"></center>
+	                        					</td>	                   -     					
+	                        					<td style="width: 10%;">
+	                        						<center>                        							
+														<button style="width:100%;margin-top:2px;" class="btn btn-danger" ng-click="deleteInstagram(instagram_item)">Удалить</button>													
+										     		</center>
+										     	</td>
+	                      					</tr>
+	                      				</tbody>
+	                  				</table>
+	                  			</div>
+	                  		</div>
+	                  		<div class="row">
+	                  			<center><button ng-click="loadInstagram()" class="btn">Показать еще...</button></center>
+	                  		</div>
+                  	</div>
+	            </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row (main row) -->
+</section>
+

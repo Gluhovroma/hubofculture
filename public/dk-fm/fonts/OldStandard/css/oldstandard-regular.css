@@ -1,0 +1,10 @@
+/* font-family: "OldStandardRegular"; */
+@font-face {
+    font-family: "OldStandardRegular";
+    src: url("../fonts/OldStandardRegular/OldStandardRegular.eot");
+    src: url("../fonts/OldStandardRegular/OldStandardRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardRegular/OldStandardRegular.woff") format("woff"),
+    url("../fonts/OldStandardRegular/OldStandardRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

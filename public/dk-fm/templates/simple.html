@@ -1,0 +1,40 @@
+<div ng-class="'col-md-' + $root.col_medium " class="post-container">
+  <div class=" row card half_card mix_card mix waypoint start" style="margin-left:0; margin-right:0">    
+    <div class="reason">      
+      <p class="byline">     
+        <span class="date">
+          <abbr title="{{simple.date}}" ng-bind="simple.date"></abbr>
+        </span>
+        <i class="glyphicon glyphicon-pencil" class="avatar" style="font-size: 15px; opacity: 0.8; margin:0px 3px 0px 3px">       
+        </i>
+        <strong style="color:black; opacity:0.6" ng-bind="simple.author"></strong>
+      </p>
+    </div>      
+    <div style="padding: 0;" ng-class="{'col-md-6': $root.col_medium == 12}">
+        <div class="cover">            
+             <div afkl-lazy-image="{{simple.photo}}" 
+    class="afkl-lazy-wrapper afkl-img-ratio-1-1 own-classname" afkl-lazy-image-options="{{nolazy}}"></div>
+         <!--  <img ng-src="{{simple.photo}}" class="cover" alt="{{simple.title}}">  -->        
+            <div class="quick_actions" ng-show="simple.song_cond">
+                <a class="quick_play" href="" title="play" style="border: none;color: #fff;"  ng-click="play(simple)">
+                  <span class="ion-android-arrow-dropright-circle" style"color: #fff;"></span>                
+                </a>              
+                <span class="pipe"></span>
+            </div>        
+         </div>
+    </div>
+    <div ng-class="{'col-md-6': $root.col_medium == 12}" style="padding:0px 15px 0px 15px">
+      <h3 class="title black" ng-bind="simple.title" style="color: #333;font-size: 20px;"></h3>  
+      <div class="frontside">
+        <div class="grid_tags tags">
+          <a ui-sref="articles({'tag': tag.urlname})" class="tag" title="Yeah Yeah Yeahs  " ng-repeat="tag in simple.tags  | limitTo:7">
+      
+                    <span  ng-bind="'#'+tag.name"></span>
+          </a>
+        </div>
+      </div>
+      <div class="annotation my-scroll-bar" scrollbar-theme="rounded-dots-dark" post-render style="max-height: 165px;overflow: auto;" ng-bind-html="simple.content"></div> 
+    </div> 
+     
+  </div>
+</div>

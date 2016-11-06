@@ -1,0 +1,10 @@
+/* font-family: "LatoLightItalic"; */
+@font-face {
+    font-family: "LatoLightItalic";
+    src: url("../fonts/LatoLightItalic/LatoLightItalic.eot");
+    src: url("../fonts/LatoLightItalic/LatoLightItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/LatoLightItalic/LatoLightItalic.woff") format("woff"),
+    url("../fonts/LatoLightItalic/LatoLightItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

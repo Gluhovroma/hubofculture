@@ -1,0 +1,30 @@
+/* font-family: "OldStandardRegular"; */
+@font-face {
+    font-family: "OldStandardRegular";
+    src: url("../fonts/OldStandardRegular/OldStandardRegular.eot");
+    src: url("../fonts/OldStandardRegular/OldStandardRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardRegular/OldStandardRegular.woff") format("woff"),
+    url("../fonts/OldStandardRegular/OldStandardRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "OldStandardBold"; */
+@font-face {
+    font-family: "OldStandardBold";
+    src: url("../fonts/OldStandardBold/OldStandardBold.eot");
+    src: url("../fonts/OldStandardBold/OldStandardBold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardBold/OldStandardBold.woff") format("woff"),
+    url("../fonts/OldStandardBold/OldStandardBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/* font-family: "OldStandardItalic"; */
+@font-face {
+    font-family: "OldStandardItalic";
+    src: url("../fonts/OldStandardItalic/OldStandardItalic.eot");
+    src: url("../fonts/OldStandardItalic/OldStandardItalic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/OldStandardItalic/OldStandardItalic.woff") format("woff"),
+    url("../fonts/OldStandardItalic/OldStandardItalic.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
